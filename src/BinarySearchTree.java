@@ -9,7 +9,7 @@ public class BinarySearchTree implements BinarySearchTreeFunctions
 	
 	public Node getRoot()
 	{
-		return null;
+		return root;
 	}
 	
 	public void setRoot(Node root)
@@ -18,6 +18,27 @@ public class BinarySearchTree implements BinarySearchTreeFunctions
 		
 	public void insertNode(Node z)
 	{
+		Node x = new Node(this.getRoot().getKey(), this.getRoot().getData());
+		Node y = null;
+		while(x != null) {
+			x.setParent(y);
+			if (z.getKey() < x.getKey()) {
+				x = x.getLeft();
+			}
+			else {
+				x = x.getRight();
+			}
+			z.setParent(y);
+			if (y == null) {
+				setRoot(z);
+			}
+			else if (z.getKey() < y.getKey()) {
+				y.setLeft(z);
+			}
+			else {
+				y.setRight(z);
+			}
+		}
 	}
 	
 	public void updateNode(Node z)
