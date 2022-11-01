@@ -22,39 +22,42 @@ public class Node implements NodeFunctions
 	
 	public int getKey()
 	{
-		return 0;
+		return key;
 	}
 	
 	public Node getParent()
 	{
-		return null;
+		return parent;
 	}
 	
 	public Node getLeft()
 	{
-		return null;
+		return left;
 	}
 	
 	public Node getRight()
 	{
-		return null;
+		return right;
 	}
 	
 	public void setLeft(Node n)
 	{
+		left = n;
 	}
 	
 	public void setRight(Node n)
 	{
+		right = n;
 	}
 	
 	public void setParent(Node n)
 	{
+		parent = n;
 	}
 	
 	public String toString()
 	{
-		return "";
+		return "(" + key + "," + parent + "," + left + "," + right + ")" ;
 	}
 	
 	public boolean equals(Object o)
@@ -64,7 +67,7 @@ public class Node implements NodeFunctions
 	
 	public Object getData()
 	{
-		return null;
+		return data;
 	}
 	
 	public void setData(Object o)
