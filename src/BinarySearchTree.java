@@ -14,11 +14,12 @@ public class BinarySearchTree implements BinarySearchTreeFunctions
 	
 	public void setRoot(Node root)
 	{
+		this.root = root;
 	}
 		
-	public void insertNode(Node z)
+	public void insertNode(Node z) 	
 	{
-		Node x = new Node(this.getRoot().getKey(), this.getRoot().getData());
+		Node x = getRoot();
 		Node y = null;
 		while(x != null) {
 			x.setParent(y);
@@ -94,22 +95,49 @@ public class BinarySearchTree implements BinarySearchTreeFunctions
 		
 	public Node getMax(Node x)
 	{
-		return null; 
+		Node y = x;
+		while (x.getRight() != null)
+		{
+			y = x.getRight();
+		}
+		return y;
 	}
 	
 	public Node getMin(Node x)
 	{
-		return null; 
+		Node y = x;
+		while (x.getLeft() != null)
+		{
+			y = x.getLeft();
+		}
+		return y;
 	}
 	
-	public Node getSuccessor(Node x)
-	{
-		return null;
+	public Node getSuccessor(Node x) {
+		if (x.getRight() != null) {
+			return getMin(x);
+		}
+		Node y = x.getParent();
+		while ((y != null) && (x == y.getRight())) {
+			x = y;
+			y = y.getParent();
+		}
+		return y;
 	}
 	
 	public Node getPredecessor(Node x)
 	{
-		return null;
+		if(x.getLeft() != null)
+		{
+			return getMax(x);
+		}
+
+		Node y = x.getParent();
+		while( (y != null) && (x == y.getLeft())) {
+			x = y;
+			y = y.getParent();
+		}
+		return y;
 	}
 	
 	public Node getNode(Node x, int key)
