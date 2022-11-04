@@ -57,7 +57,22 @@ public class Node implements NodeFunctions
 	
 	public String toString()
 	{
-		return "(" + key + "," + parent + "," + left + "," + right + ")" ;
+		java.lang.StringBuilder output = new java.lang.StringBuilder("(");
+		output.append(key);
+		output.append(",");
+		if(parent != null) {
+			output.append(parent.getKey());
+		}
+		output.append(",");
+		if(left != null) {
+			output.append(left.getKey());
+		}
+		output.append(",");
+		if(right != null) {
+			output.append(right.getKey());
+		}
+		output.append(")");
+		return output.toString();
 	}
 	
 	public boolean equals(Object o)

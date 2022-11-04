@@ -405,7 +405,7 @@ class BinarySearchTreeTest
 			Node n = new Node(keys[i]);
 			tree.insertNode(n);
 		}
-		assertEquals(tree.getHeight(tree.getRoot()), 2);
+		assertEquals(2, tree.getHeight(tree.getRoot()));
 	}
 	
 	@Test

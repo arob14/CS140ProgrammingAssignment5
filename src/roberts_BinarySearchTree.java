@@ -22,25 +22,25 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
         Node x = getRoot();
         Node y = null;
         while(x != null) {
-            x.setParent(y);
+            y = x;
             if (z.getKey() < x.getKey()) {
                 x = x.getLeft();
-            }
-            else {
+            } else {
                 x = x.getRight();
             }
-            z.setParent(y);
-            if (y == null) {
-                setRoot(z);
-            }
-            else if (z.getKey() < y.getKey()) {
-                y.setLeft(z);
-            }
-            else {
-                y.setRight(z);
-            }
+        }
+        z.setParent(y);
+        if (y == null) {
+            setRoot(z);
+        }
+        else if (z.getKey() < y.getKey()) {
+            y.setLeft(z);
+        }
+        else {
+            y.setRight(z);
         }
     }
+
 
     public void updateNode(Node z)
     {
@@ -122,9 +122,9 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
     public Node getMax(Node x)
     {
         Node y = x;
-        while (x.getRight() != null)
+        while (y.getRight() != null)
         {
-            y = x.getRight();
+            y = y.getRight();
         }
         return y;
     }
@@ -132,9 +132,9 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
     public Node getMin(Node x)
     {
         Node y = x;
-        while (x.getLeft() != null)
+        while (y.getLeft() != null)
         {
-            y = x.getLeft();
+            y = y.getLeft();
         }
         return y;
     }
@@ -208,19 +208,24 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
 
     public void deleteNode(Node z)
     {
-
-        if (z.getLeft() == null) {
+        if(z.getLeft() == null) {
             shiftNode(z, z.getRight());
         }
         else {
-            Node y = getSuccessor(z);
-            if(y.getParent() != z) {
-                shiftNode(y, y.getRight());
-                y.getRight().setParent(y);
+            if (z.getRight() == null) {
+                shiftNode(z,z.getLeft());
             }
-            shiftNode(z,y);
-            y.setLeft(z.getLeft());
-            y.getLeft().setParent(y);
+            else {
+                Node y = getSuccessor(z);
+                if(y.getParent() != z) {
+                    shiftNode(y,y.getRight());
+                    y.setRight(z.getRight());
+                    y.getRight().setParent(y);
+                }
+                shiftNode(z,y);
+                y.setLeft(z.getLeft());
+                y.getLeft().setParent(y);
+            }
         }
     }
 }
