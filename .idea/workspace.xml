@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80cb434e-3c2a-4080-ae3e-78a485e0b934" name="Changes" comment="implemented all functions. 11 tests passed 13 failed">
+    <list default="true" id="80cb434e-3c2a-4080-ae3e-78a485e0b934" name="Changes" comment="18 tests passed 6 failed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/roberts_BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/roberts_BinarySearchTree.java" afterDir="false" />
     </list>
@@ -49,23 +49,19 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BinarySearchTreeTest.testInsertThreeNodes">
-    <configuration name="BinarySearchTreeTest.testGetSuccessorOfRootForSevenNodesTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.testBinarySearchTree">
+    <configuration name="testBinarySearchTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testBinarySearchTree" />
       <module name="ProgrammingAssignment5" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BinarySearchTreeTest" />
-      <option name="METHOD_NAME" value="testGetSuccessorOfRootForSevenNodesTree" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinarySearchTreeTest.testInsertSevenNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinarySearchTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammingAssignment5" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinarySearchTreeTest" />
-      <option name="METHOD_NAME" value="testInsertSevenNodes" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -80,21 +76,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinarySearchTreeTest.testPredecessorOnMin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinarySearchTreeTest.testSuccessorWithNoRightChild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammingAssignment5" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinarySearchTreeTest" />
-      <option name="METHOD_NAME" value="testPredecessorOnMin" />
+      <option name="METHOD_NAME" value="testSuccessorWithNoRightChild" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinarySearchTreeTest.testPredecessorWithLefthild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinarySearchTreeTest.testSuccessorWithRightChild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgrammingAssignment5" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinarySearchTreeTest" />
-      <option name="METHOD_NAME" value="testPredecessorWithLefthild" />
+      <option name="METHOD_NAME" value="testSuccessorWithRightChild" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,11 +98,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.testBinarySearchTree" />
+        <item itemvalue="JUnit.BinarySearchTreeTest" />
+        <item itemvalue="JUnit.BinarySearchTreeTest.testSuccessorWithRightChild" />
+        <item itemvalue="JUnit.BinarySearchTreeTest.testSuccessorWithNoRightChild" />
         <item itemvalue="JUnit.BinarySearchTreeTest.testInsertThreeNodes" />
-        <item itemvalue="JUnit.BinarySearchTreeTest.testInsertSevenNodes" />
-        <item itemvalue="JUnit.BinarySearchTreeTest.testPredecessorWithLefthild" />
-        <item itemvalue="JUnit.BinarySearchTreeTest.testGetSuccessorOfRootForSevenNodesTree" />
-        <item itemvalue="JUnit.BinarySearchTreeTest.testPredecessorOnMin" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667541432491</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="18 tests passed 6 failed">
+      <created>1667541796093</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667541796093</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,16 +186,12 @@
     <MESSAGE value="updated BST file/class name and implemented more functions" />
     <MESSAGE value="updated names in BST jUnit tests" />
     <MESSAGE value="implemented all functions. 11 tests passed 13 failed" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented all functions. 11 tests passed 13 failed" />
+    <MESSAGE value="18 tests passed 6 failed" />
+    <option name="LAST_COMMIT_MESSAGE" value="18 tests passed 6 failed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/BinarySearchTreeTest.java</url>
-          <line>274</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="3" />

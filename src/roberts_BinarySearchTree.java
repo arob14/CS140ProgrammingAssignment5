@@ -129,17 +129,16 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
 
     public Node getMin(Node x)
     {
-        Node y = x;
-        while (y.getLeft() != null)
+        while (x.getLeft() != null)
         {
-            y = y.getLeft();
+            x = x.getLeft();
         }
-        return y;
+        return x;
     }
 
     public Node getSuccessor(Node x) {
         if (x.getRight() != null) {
-            return getMin(x);
+            return getMin(x.getRight());
         }
         Node y = x.getParent();
         while ((y != null) && (x == y.getRight())) {
@@ -153,7 +152,7 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
     {
         if(x.getLeft() != null)
         {
-            return getMax(x);
+            return getMax(x.getLeft());
         }
 
         Node y = x.getParent();
