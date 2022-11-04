@@ -62,6 +62,9 @@ public class Node implements NodeFunctions
 	
 	public boolean equals(Object o)
 	{
+		if (this.data == o)
+			return true;
+
 		return false;
 	}
 	
