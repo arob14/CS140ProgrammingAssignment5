@@ -93,10 +93,9 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
     public void inOrderWalk(Node x, java.util.ArrayList<String> list)
     {
         if ( x != null) {
+            inOrderWalk(x.getLeft(), list);
             list.add(x.toString());
-            inOrderWalk(x.getLeft());
-            System.out.println(x.toString());
-            inOrderWalk(x.getRight());
+            inOrderWalk(x.getRight(), list);
         }
     }
 
@@ -112,10 +111,9 @@ public class roberts_BinarySearchTree implements BinarySearchTreeFunctions
     public void postOrderWalk(Node x, java.util.ArrayList<String> list)
     {
         if (x != null) {
+            postOrderWalk(x.getLeft(), list);
+            postOrderWalk(x.getRight(), list);
             list.add(x.toString());
-            postOrderWalk(x.getLeft());
-            postOrderWalk(x.getRight());
-            System.out.println(x.toString());
         }
     }
 
