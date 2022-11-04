@@ -3,7 +3,7 @@ class testBinarySearchTree
 	public static void main(String[] args)
 	{
 		// create the bst
-		BinarySearchTree tree = new BinarySearchTree();
+		roberts_BinarySearchTree tree = new roberts_BinarySearchTree();
 		
 		// add nodes for the keys provided on the command line
 		for( int i = 0; i < args.length; i++ )
