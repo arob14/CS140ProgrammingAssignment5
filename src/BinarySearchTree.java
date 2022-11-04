@@ -142,19 +142,59 @@ public class BinarySearchTree implements BinarySearchTreeFunctions
 	
 	public Node getNode(Node x, int key)
 	{
-		return null;
+		if ( ( x == null) || (key == x.getKey())) {
+			return x;
+		}
+		if (key < x.getKey()) {
+			return getNode(x.getLeft(), key);
+		}
+		else {
+			return getNode(x.getRight(), key);
+		}
 	}
 	
 	public int getHeight(Node x)
 	{
-		return 0;
+		if (x == null) return -1;
+		int leftHeight = getHeight(x.getLeft());
+		int rightHeight = getHeight(x.getRight());
+		if (leftHeight > rightHeight) {
+			return leftHeight + 1;
+		}
+		return rightHeight + 1;
 	}
 	
 	public void shiftNode(Node u, Node v)
 	{
+		if (getRoot() == u) {
+			setRoot(v);
+		}
+		else {
+			if(u.getParent().getRight() == u) {
+				u.getParent().setRight(v);
+			}
+			else {
+				u.getParent().setLeft(v);
+			}
+		}
+		if (v != null) v.setParent(u.getParent());
 	}
 	
 	public void deleteNode(Node z)
 	{
+
+		if (z.getLeft() == null) {
+			shiftNode(z, z.getRight());
+		}
+		else {
+			Node y = getSuccessor(z);
+			if(y.getParent() != z) {
+				shiftNode(y, y.getRight());
+				y.getRight().setParent(y);
+			}
+			shiftNode(z,y);
+			y.setLeft(z.getLeft());
+			y.getLeft().setParent(y);
+		}
 	}
 }
