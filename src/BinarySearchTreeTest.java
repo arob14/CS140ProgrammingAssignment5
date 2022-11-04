@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 class BinarySearchTreeTest 
 {
 	// use this binary search tree for the smaller trees
-	BinarySearchTree tree;
+	roberts_BinarySearchTree tree;
 	
 	// use this binary search tree for the 31 key tree
-	BinarySearchTree t;
+	roberts_BinarySearchTree t;
 	
 	// test node 20 added correctly
 	static java.util.ArrayList<String> checkInOrderWalkInsertRoot;
@@ -262,10 +262,10 @@ class BinarySearchTreeTest
 	void setUp() throws Exception 
 	{
 		// tree to use for a few of the smaller insert key tests
-		tree = new BinarySearchTree();
+		tree = new roberts_BinarySearchTree();
 		
 		// tree to use for the tests related to the 31 key tree
-		t = new BinarySearchTree();
+		t = new roberts_BinarySearchTree();
 		
 		// the list of 31 keys, will be used in multiple tests
 		int[] keys = new int[] {50, 25, 75, 15, 40, 60, 90, 10, 20, 30, 45, 55, 
